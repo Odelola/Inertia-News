@@ -1,0 +1,6 @@
+Filter the data without images
+Implement the searrch functionality
+Create a loader screen and error component
+Create and error page if needed
+Recreate the Navbar component
+Get filter if needed
