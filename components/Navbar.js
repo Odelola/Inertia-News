@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="navigation w-full font-nunito font-400 py-4 z-50 bg-white shadow-sm" id="navigation">
         <div className="nav-inner flex justify-between items-center max-w-screen-xl mx-auto px-8">
             <div className="nav-logo">
-                <Image src={navLogo} className='h-4' />
+                <Image src={navLogo} className='h-4' alt/>
             </div>
             <ModeToggler />
             <ul className="nav-filters flex gap-8 align-center">
