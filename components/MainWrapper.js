@@ -6,7 +6,7 @@ const MainWrapper = ({ news }) => {
   const newsItems = news.articles.filter((newsitem) => {return newsitem.urlToImage !== null})
   console.log(newsItems)
   return(
-    <div className='mainwrapper-inner grid grid-cols-3 gap-8'>
+    <div className='mainwrapper-inner grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2'>
       <Loader />
       {newsItems.map((data, key) => (
           <Link href={`${data.url}`} key={key}>

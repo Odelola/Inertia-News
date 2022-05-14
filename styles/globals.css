@@ -6,9 +6,44 @@
 body{
     background: #F7F7FB;
 }
-
+/* The Stylesheet for Dark Mode */
 @layer components {
-    .dark-bg{
-        @apply bg-red-500;
+    body{
+        @apply dark:bg-[#131128]
     }
+    /* Navbar Component Starts */
+    .navigation{
+        @apply dark:bg-[#131128] dark:border-b dark:border-[#53516c]
+    }
+    .nav-filters li > a{
+        @apply dark:text-[#e0dff1]
+    }
+    /* ModeToggler Component Starts */
+    #mode-toggler #sunLogo,
+    #mode-toggler #moonLogo{
+        @apply dark:stroke-[#e0dff1]
+    }
+    /* ModeToggler Component Ends */
+    /* Navbar Component Ends */
+    /* SearchHeader Component Starts */
+    .news-search{
+        @apply dark:bg-slate-800;
+    }
+    .news-search .feather{
+        @apply dark:stroke-slate-800;
+
+    }
+    /* SearchHeader Component Ends */
+    /* MainCards Component Starts */
+    .news-card{
+        @apply dark:bg-[#282454];
+    }
+    .news-card .news-card_heading{
+        @apply dark:text-white
+    }
+    .news-card .news-card_text{
+        @apply dark:text-[#e0dff1]
+    }
+    /* MainCards Component Ends */
+
 } 

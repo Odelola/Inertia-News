@@ -3,12 +3,15 @@ import Image from 'next/image'
 import searchIcon from '../public/images/searchImages/search.svg'
 
 const SearchHeader = () => {
+
+
   const searchInput = useRef(null);
   
   function onEnterSearch (event) {
     const searchedTerm = searchInput.current.value;
     if(event.key == "Enter"){
       console.log(searchedTerm.trim());
+      searchInput.current.value = ""
     }
   }
   return (
