@@ -9,7 +9,7 @@ export async function getStaticProps() {
   const todayMonth = todayDate.getMonth() +1;
   const todayDay = todayDate.getDate();
 
-  const apiUrl = `https://newsapi.org/v2/everything?q=xiaomi&searchIn=title&pageSize=100&from=${todayYear}-${todayMonth}-${todayDay - 1}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+  const apiUrl = `https://newsapi.org/v2/everything?q=xiaomi&searchIn=title&pageSize=100&from=${todayYear}-${todayMonth}-${todayDay}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
   const res = await fetch(apiUrl);
   const news = await res.json();
 
@@ -26,6 +26,7 @@ export default function Home({news}) {
     <>
       <Head>
         <title>NEWS PROJECT</title>
+        {/* <link rel="icon" href="/iconpro.ico" /> */}
       </Head>
 
       <Navbar />

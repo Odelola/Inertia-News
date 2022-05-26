@@ -27,11 +27,13 @@ body{
     /* Navbar Component Ends */
     /* SearchHeader Component Starts */
     .news-search{
-        @apply dark:bg-slate-800;
+        @apply dark:bg-slate-800 dark:border-slate-700
+    }
+    .news-search input{
+        @apply dark:bg-slate-800 dark:text-white dark:placeholder-[#e0dff1]
     }
     .news-search .feather{
-        @apply dark:stroke-slate-800;
-
+        @apply dark:stroke-slate-800
     }
     /* SearchHeader Component Ends */
     /* MainCards Component Starts */
