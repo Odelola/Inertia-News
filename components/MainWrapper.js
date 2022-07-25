@@ -4,16 +4,15 @@ import Loader from './Loader'
 
 const MainWrapper = ({ news }) => {
   const newsItems = news.articles.filter((newsitem) => {return newsitem.urlToImage !== null})
-  console.log(newsItems)
   return(
-    <div className='mainwrapper-inner grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2'>
+    <div className='mainwrapper-inner max-w-[700px] mx-auto flex flex-col gap-4'>
       <Loader />
       {newsItems.map((data, key) => (
-          <Link href={`${data.url}`} key={key}>
-            <a target="_blank"> 
-              <MainCards data={data} />
-            </a>
-          </Link>
+          // <Link href="#0" key={key}>
+            // <a> 
+              <MainCards data={data} key={key} id={data.author} />
+            // </a>
+          // </Link>
           )
         )
       }

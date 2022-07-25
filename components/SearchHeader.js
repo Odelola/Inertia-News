@@ -1,16 +1,19 @@
 import {useRef, useState }from 'react'
+import {useRouter} from 'next/router'
 
 const SearchHeader = ({theTerm}) => {
+  const router = useRouter();
   const searchInput = useRef(null);
   const [searchedTerm, setSearchedTerm] = useState('')
 
   function onEnterSearch (event) {
     const searchTerm = searchInput.current.value;
     if(event.key == "Enter"){
-      console.log(searchTerm.trim());
       searchInput.current.value = ""
-      setSearchedTerm(searchTerm);
+      setSearchedTerm(searchTerm.trim());
     }
+    if(!searchedTerm) return
+    router.push(`/search?term=${searchedTerm}`);
   }
   
   function theTerm() {

@@ -36,9 +36,14 @@ body{
         @apply stroke-[#170549] dark:stroke-[#e0dff1]
     }
     /* SearchHeader Component Ends */
+    /* SideBarLinks Component Starts */
+    .side-bar-link{
+        @apply dark:text-[#e0dff1]
+    }
+    /* SideBarLinks Component Starts */
     /* MainCards Component Starts */
     .news-card{
-        @apply dark:bg-[#282454];
+        @apply dark:border dark:border-[#282454];
     }
     .news-card .news-card_heading{
         @apply dark:text-white
@@ -47,5 +52,4 @@ body{
         @apply dark:text-[#e0dff1]
     }
     /* MainCards Component Ends */
-
 } 

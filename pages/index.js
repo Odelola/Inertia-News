@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import SearchHeader from '../components/SearchHeader'
 import MainWrapper from '../components/MainWrapper'
-import useFetch from '../utils/hooks/useFetch'
+import { API_URL , fetchApi} from '../utils/hooks/useFetch';
+
 
 export async function getStaticProps() {
   const todayDate = new Date();
@@ -11,8 +10,9 @@ export async function getStaticProps() {
   const todayDay = todayDate.getDate();
 
   // const apiUrl = `https://newsapi.org/v2/everything?q=xiaomi&searchIn=title&pageSize=100&from=${todayYear}-${todayMonth}-${todayDay}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
-  const res = await fetch(useFetch.fetchQuery);
-  const news = await res.json();
+  // const res = await fetch(useFetch.fetchQuery('oppo'));
+  // const news = await res.json();
+  const news = await fetchApi(`${API_URL}/?q=xiaomi&searchIn=title&pageSize=100&from=${todayYear}-${todayMonth}-${todayDay}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`);
 
   return {
     props: {
@@ -22,16 +22,14 @@ export async function getStaticProps() {
 }
 
 
-export default function Home({news, term}) {
+export default function Home({news}) {
   return (
     <>
       <Head>
-        <title>NEWS PROJECT</title>
+        <title>INERTIA NEWS</title>
         {/* <link rel="icon" href="/iconpro.ico" /> */}
       </Head>
 
-      <Navbar />
-      <SearchHeader  />
       <main className="max-w-screen-xl mx-auto px-8 py-4 ">
         <MainWrapper news={news}/>
       </main>
