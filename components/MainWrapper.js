@@ -3,11 +3,11 @@ import Link from 'next/link'
 import Loader from './Loader'
 
 const MainWrapper = ({ news }) => {
-  const newsItems = news.articles.filter((newsitem) => {return newsitem.urlToImage !== null})
+  const newsItems = news?.articles?.filter((newsitem) => {return newsitem.urlToImage !== null})
   return(
     <div className='mainwrapper-inner max-w-[700px] mx-auto flex flex-col gap-4'>
       <Loader />
-      {newsItems.map((data, key) => (
+      {newsItems ? newsItems.map((data, key) => (
           // <Link href="#0" key={key}>
             // <a> 
               <MainCards data={data} key={key} id={data.author} />
@@ -15,7 +15,7 @@ const MainWrapper = ({ news }) => {
           // </Link>
           )
         )
-      }
+       : (<p>No Results</p>)}
     </div>
   )
 }

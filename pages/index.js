@@ -3,7 +3,7 @@ import MainWrapper from '../components/MainWrapper'
 import { API_URL , fetchApi} from '../utils/hooks/useFetch';
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const todayDate = new Date();
   const todayYear = todayDate.getFullYear();
   const todayMonth = todayDate.getMonth() +1;
@@ -12,7 +12,7 @@ export async function getStaticProps() {
   // const apiUrl = `https://newsapi.org/v2/everything?q=xiaomi&searchIn=title&pageSize=100&from=${todayYear}-${todayMonth}-${todayDay}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
   // const res = await fetch(useFetch.fetchQuery('oppo'));
   // const news = await res.json();
-  const news = await fetchApi(`${API_URL}/?q=xiaomi&searchIn=title&pageSize=100&from=${todayYear}-${todayMonth}-${todayDay}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`);
+  const news = await fetchApi(`${API_URL}/?q=samsung&searchIn=title&pageSize=30&from=${todayYear}-${todayMonth}-${todayDay}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`);
 
   return {
     props: {

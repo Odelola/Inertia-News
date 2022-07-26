@@ -1,15 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300&family=Zilla+Slab:wght@300&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Zilla+Slab&display=swap');
+
+/* The Stylesheet for Dark Mode */
 body{
     background: #F7F7FB;
+    /* font-family: 'Nunito', sans-serif; */
 }
-/* The Stylesheet for Dark Mode */
+/* @layer base {
+    body {
+        font-family: 'Nunito', sans-serif;
+    }
+} */
 @layer components {
+    *{
+        @apply font-zilla
+    }
     body{
-        @apply dark:bg-[#131128]
+        @apply dark:bg-[#131128];
     }
     /* Navbar Component Starts */
     .navigation{
@@ -38,7 +48,7 @@ body{
     /* SearchHeader Component Ends */
     /* SideBarLinks Component Starts */
     .side-bar-link{
-        @apply dark:text-[#e0dff1]
+        @apply dark:text-[#e0dff1] dark:hover:bg-slate-800
     }
     /* SideBarLinks Component Starts */
     /* MainCards Component Starts */
@@ -47,6 +57,9 @@ body{
     }
     .news-card .news-card_heading{
         @apply dark:text-white
+    }
+    .news-source span{
+        @apply dark:text-[#e0dee6]
     }
     .news-card .news-card_text{
         @apply dark:text-[#e0dff1]

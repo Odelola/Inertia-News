@@ -8,7 +8,7 @@ const SideBarLinksNav = () => {
   }
   return (
     <nav id="side-bar-links-nav" className="fixed left-0 top-20 min-h w-64 pt-4 px-8">
-        <div className="side-bar-links-nav_inner flex flex-col gap-12">
+        <div className="side-bar-links-nav_inner flex flex-col gap-6">
             <SideBarLink icon={<LocationMarkerIcon {...iconStyle} />} linkText="Nigeria" redirect="/nigeria" />
             <SideBarLink icon={<GlobeIcon {...iconStyle} />} linkText="World" redirect="/world" />
             <SideBarLink icon={<BriefcaseIcon {...iconStyle} />} linkText="Business" redirect="/business" />
