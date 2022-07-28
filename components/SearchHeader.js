@@ -8,12 +8,15 @@ const SearchHeader = ({theTerm}) => {
 
   function onEnterSearch (event) {
     const searchTerm = searchInput.current.value;
+    // console.log(searchTerm)
     if(event.key == "Enter"){
       searchInput.current.value = ""
+      console.log(searchTerm)
       setSearchedTerm(searchTerm.trim());
+      console.log(searchedTerm)
+      router.push(`/search?term=${searchTerm}`);
     }
     if(!searchedTerm) return
-    router.push(`/search?term=${searchedTerm}`);
   }
   
   function theTerm() {

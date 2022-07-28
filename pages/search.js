@@ -1,36 +1,28 @@
-// import MainWrapper from "../components/MainWrapper"
-import {useRouter} from "next/router"
-// import {changeName} from "../utils/hooks/useFetch"
-import useFetch from "../utils/hooks/useFetch"
+import MainWrapper from "../components/MainWrapper";
+import { API_URL , fetchApi} from '../utils/hooks/useFetch';
 
-// const getRouterTerm = () =>{
-//   const router = useRouter();
-//   const resultsTerm = router.query.term;
 
-//   return resultsTerm;
-// }
-const search = ({}) => {
-  // console.log(getRouterTerm());
+
+export async function getServerSideProps({ query }) {
+  const todayDate = new Date();
+  const todayYear = todayDate.getFullYear();
+  const todayMonth = todayDate.getMonth() +1;
+  const todayDay = todayDate.getDate();
+
+  const news = await fetchApi(`${API_URL}/?q=${query.term}&searchIn=title&pageSize=30&from=${todayYear}-${todayMonth}-${todayDay-1}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`);
+
+
+  return {
+    props:{
+      news,
+    }
+  }
+}
+const search = ({news}) => {
     return (
         <>
-          {/* <MainWrapper /> */}
+          <MainWrapper news={news}/>
         </>
   )
-}
-
-// export async function getStaticProps({params: getRouterTerm}) {
-    
-//     // const apiUrl = `https://newsapi.org/v2/everything?q=xiaomi&searchIn=title&pageSize=100&from=${todayYear}-${todayMonth}-${todayDay}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
-//     //    changeName(router.query.term);
-//     // resultsTerm = context.params.term
-//     const res = await fetch(useFetch.fetchQuery(getRouterTerm()));
-//     const searchedNews = await res.json();
-//     // console.log(searchedNews);
-//     return {
-//       props: {
-//         searchedNews,
-//       },
-//     }
-//   }
-  
+} 
 export default search

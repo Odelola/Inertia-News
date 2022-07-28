@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Loader from './Loader'
 
 const MainWrapper = ({ news }) => {
-  const newsItems = news?.articles?.filter((newsitem) => {return newsitem.urlToImage !== null})
+  const newsItems = news?.articles?.filter((newsitem, index) => {return newsitem.urlToImage !== null ||  news.articles.indexOf(newsitem) !== index})
   return(
     <div className='mainwrapper-inner max-w-[700px] mx-auto flex flex-col gap-4'>
       <Loader />
