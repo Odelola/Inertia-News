@@ -51,6 +51,11 @@ body{
         @apply dark:text-[#e0dff1] dark:hover:bg-slate-800
     }
     /* SideBarLinks Component Starts */
+    /* MainWrapper Component Starts */
+    .mainwrapper-inner {
+        @apply md:hidden
+    }
+    /* MainWrapper Component Ends */
     /* MainCards Component Starts */
     .news-card{
         @apply dark:border dark:border-[#282454];

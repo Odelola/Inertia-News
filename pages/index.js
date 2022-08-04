@@ -12,7 +12,7 @@ export async function getServerSideProps() {
   // const apiUrl = `https://newsapi.org/v2/everything?q=xiaomi&searchIn=title&pageSize=100&from=${todayYear}-${todayMonth}-${todayDay}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
   // const res = await fetch(useFetch.fetchQuery('oppo'));
   // const news = await res.json();
-  const news = await fetchApi(`${API_URL}/?q=samsung&searchIn=title&pageSize=30&from=${todayYear}-${todayMonth}-${todayDay-1}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`);
+  const news = await fetchApi(`${API_URL}/?q=oppo&searchIn=title&pageSize=30&from=${todayYear}-${todayMonth}-${todayDay-1}&language=en&sortBy=publishedAt&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`);
 
   return {
     props: {

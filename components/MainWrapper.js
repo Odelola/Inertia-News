@@ -6,7 +6,7 @@ const MainWrapper = ({ news }) => {
   const newsItems = news?.articles?.filter((newsitem, index) => {return newsitem.urlToImage !== null ||  news.articles.indexOf(newsitem) !== index})
   return(
     <div className='mainwrapper-inner max-w-[700px] mx-auto flex flex-col gap-4'>
-      <Loader />
+      {/* <Loader /> */}
       {newsItems ? newsItems.map((data, key) => (
           // <Link href="#0" key={key}>
             // <a> 

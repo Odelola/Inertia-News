@@ -1,3 +1,5 @@
+import Head from "next/head";
+import { useRouter } from "next/router";
 import MainWrapper from "../components/MainWrapper";
 import { API_URL , fetchApi} from '../utils/hooks/useFetch';
 
@@ -19,8 +21,13 @@ export async function getServerSideProps({ query }) {
   }
 }
 const search = ({news}) => {
+  const { query }= useRouter();
+  console.log(query.term);
     return (
         <>
+        <Head>
+          <title>Search results for {query.term}</title>
+        </Head>
           <MainWrapper news={news}/>
         </>
   )
