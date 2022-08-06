@@ -21,12 +21,12 @@ export async function getServerSideProps({ query }) {
   }
 }
 const search = ({news}) => {
-  const { query }= useRouter();
-  console.log(query.term);
+  // const router = useRouter();
+  // console.log(query.term);
     return (
         <>
         <Head>
-          <title>Search results for {query.term}</title>
+          <title>Search results</title>
         </Head>
           <MainWrapper news={news}/>
         </>
