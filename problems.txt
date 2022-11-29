@@ -1,7 +1,13 @@
-Filter the data without images
-Implement the searrch functionality
-Create a loader screen and error component
+
+
+
+
+
+Get Sidebar workings
+Pagination things
 Create and error page if needed
-Recreate the Navbar component
-Get filter if needed
-Do the fonts
+Fix overflow issue
+Fix time of post issue
+
+
+
